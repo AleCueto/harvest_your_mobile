@@ -1,8 +1,8 @@
 <div >
   <ion-grid id="container" fixed="true">
     <ion-row>
-      <ion-col style="background-color: rgb(49, 25, 18);" sizeLg="3" sizeMd="3" sizeXs="3" *ngFor="let item of tileList">
-        <app-tile></app-tile>
+      <ion-col style="background-color: rgb(90, 62, 41);" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of tileList">
+        <app-tile [tileInput]="item"></app-tile>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -7,10 +7,12 @@ export interface Farmeable {
     
     //Control del tiempo
     days_to_harvest:number;
-    create_date:string;
+    create_date:string; //Esto va en el tile
 
 
     //Valor en monedas
     purchase_value:number;
     sale_value:number;
+
+    //Cantidad de tal que tienes
 }
