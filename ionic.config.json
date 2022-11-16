@@ -1,0 +1,7 @@
+{
+  "name": "harvest_yout_mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
