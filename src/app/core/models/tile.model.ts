@@ -1,7 +1,8 @@
-import { Farmeable } from "./farmeables.model";
+import { Farmeable } from "./farmeable.model";
 
 export interface Tile{
     
-    farmeable:Farmeable;
+    farmeable : Farmeable|null;
+    image:string;
 
 }
