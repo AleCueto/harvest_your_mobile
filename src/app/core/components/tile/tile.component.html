@@ -1,1 +1,6 @@
-<ion-img (click)="itemClicked()"  style="border-radius: 20px" src="../../../../assets/images/tile.svg"></ion-img>
+    <div style="position:relative">
+        <ion-img  (click)="itemClicked()"  style="z-index: -1;" src="../../../../assets/images/tile.svg"></ion-img>
+        <div style="position:absolute; top:0; left:0;">
+        <ion-img style="z-index: 1;" src="{{this.tileInput?.farmeable!.image}}" *ngIf= "this.tileInput?.farmeable != null"></ion-img>
+        </div>
+        </div> 

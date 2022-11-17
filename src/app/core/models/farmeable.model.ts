@@ -15,4 +15,8 @@ export interface Farmeable {
     sale_value:number;
 
     //Cantidad de tal que tienes
+    amount:number;
+
+    //Visual
+    image:string;
 }

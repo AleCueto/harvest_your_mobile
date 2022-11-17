@@ -14,7 +14,9 @@ export class FarmeablesService {
       days_to_harvest:1,
       create_date:"now",
       purchase_value:50,
-      sale_value:100
+      sale_value:100,
+      amount:1,
+      image: "../../../../assets/images/puerro.png"
     }
 
 
