@@ -6,8 +6,7 @@ export interface Farmeable {
     name:string;
     
     //Control del tiempo
-    days_to_harvest:number;
-    create_date:string; //Esto va en el tile
+    seconds_to_harvest:number; // tiempo a transcurrir
 
 
     //Valor en monedas

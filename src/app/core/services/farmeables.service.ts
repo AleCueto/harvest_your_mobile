@@ -11,18 +11,30 @@ export class FarmeablesService {
     {
       id:1,
       name:"puerro",
-      days_to_harvest:1,
-      create_date:"now",
+      seconds_to_harvest:20,
+      purchase_value:50,
+      sale_value:100,
+      amount:3,
+      image: "/assets/images/puerro.png"
+    },
+
+    {
+      id:2,
+      name:"marihuana",
+      seconds_to_harvest:10,
       purchase_value:50,
       sale_value:100,
       amount:1,
-      image: "../../../../assets/images/puerro.png"
-    }
-
-
+      image: "/assets/images/hoja.webp"
+    },
+    
 
   ]
 
+
+  getFarmeables(): Farmeable[]{
+    return(this._farmeable)
+  }
 
 
   constructor() { 

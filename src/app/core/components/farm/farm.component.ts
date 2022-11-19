@@ -11,18 +11,23 @@ import { TilesService } from '../../services/tiles.service';
 })
 export class FarmComponent implements OnInit {
 
-  tiles: TilesService = new TilesService;
+
 
   //Lista de todas las casillas.
-  tileList:Tile[] = this.tiles._tile
+  // tileList:Tile[] = this.tiles._tile
 
-  constructor() {}
+  constructor(private tilesSVC: TilesService) {}
 
   ngOnInit() {
 
     
-    console.log(this.tileList)
+    // console.log(this.tileList)
 
+  }
+
+  
+  getTiles(){
+    return this.tilesSVC.tiles$
   }
 
 }
