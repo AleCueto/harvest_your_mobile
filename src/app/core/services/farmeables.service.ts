@@ -20,12 +20,12 @@ export class FarmeablesService {
 
     {
       id:2,
-      name:"marihuana",
+      name:"rabano",
       seconds_to_harvest:10,
       purchase_value:50,
       sale_value:100,
       amount:1,
-      image: "/assets/images/hoja.webp"
+      image: "/assets/images/rabano.png"
     },
     
 

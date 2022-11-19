@@ -10,7 +10,7 @@ import { TileDetailComponent } from '../tile-detail/tile-detail.component';
 import { TilesService } from '../../services/tiles.service';
 
 import * as moment from 'moment-timezone';
-import { take, takeWhile } from 'rxjs';
+import { ignoreElements, take, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-tile',
@@ -69,7 +69,7 @@ export class TileComponent implements OnInit {
         next(_moment){
           if(_moment.isAfter(moment_to_harvest)){
             console.log("Puedes recoger: " + tile?.farmeable?.name)
-            
+            tile!.canRecolect = true;
           }else{
             
             // console.log(tile?.create_date?.add(tile?.farmeable?.days_to_harvest, "seconds"))
