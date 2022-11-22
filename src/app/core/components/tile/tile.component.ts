@@ -11,6 +11,7 @@ import { TilesService } from '../../services/tiles.service';
 
 import * as moment from 'moment-timezone';
 import { ignoreElements, take, takeWhile } from 'rxjs';
+import { MoneyService } from '../../services/money.service';
 
 @Component({
   selector: 'app-tile',
@@ -25,23 +26,42 @@ export class TileComponent implements OnInit {
   constructor(
     private farmeableSVC:FarmeablesService,
     private tileSVC:TilesService,
-    private modal:ModalController
-    
+    private modal:ModalController,
+    private moneySVC:MoneyService
     ) { }
 
   ngOnInit() {
-
   }
 
   itemClicked(){
     //ABRIR MODAL EN EL QUE ELEGIR EL FARMEABLE
     // console.log(this.tileSVC._tile.find(i=>i.id == this.tileInput?.id))
-    this.presentForm()
+    if(this.tileInput!=undefined){
+      
+      var tile = this.tileSVC._tile.find(i=>i.id == this.tileInput?.id)
+      
+      if(tile?.farmeable == null || tile?.farmeable == undefined){
+        this.presentForm()
+      } else{
+        if(tile?.canRecolect){
+          this.moneySVC.earnMoney(tile?.farmeable.sale_value)
+          this.cleanTile(tile)
+        }else{
+          console.log("Está lleno y no puedes recoger")
+        }
+      }
+
+    }
     // console.log("Has clicado la casilla número " + this.tileInput?.id)
     // if(this.tileInput != undefined){
     //   this.setFarmeable(this.farmeableSVC._farmeable.find(i => {return i.name == "puerro"})!);
     // }
 
+  }
+
+  cleanTile(tile:Tile){
+    tile.farmeable = null;
+    tile.canRecolect = false
   }
 
 
@@ -51,6 +71,7 @@ export class TileComponent implements OnInit {
     var tile = this.tileSVC._tile.find(i=>i.id == this.tileInput?.id)
     if(this.tileInput != undefined){
       tile!.farmeable = farmeable;
+      console.log(tile?.id + " |" + tile?.farmeable.name)
       tile!.create_date = moment();
       // console.log(tile)
       var moment_to_harvest = tile?.create_date?.add(tile?.farmeable?.seconds_to_harvest, "seconds")
@@ -58,7 +79,7 @@ export class TileComponent implements OnInit {
     // this.tileInput!.farmeable = farmeable;
 
 
-    var index = 1
+    // var index = 1
 
     //Creation observable to control time
     var time_farming = this.tileSVC.actual_time
@@ -73,9 +94,9 @@ export class TileComponent implements OnInit {
           }else{
             
             // console.log(tile?.create_date?.add(tile?.farmeable?.days_to_harvest, "seconds"))
-            console.log("contador para recoger " + tile?.farmeable?.name + ":" + index)
+            // console.log("contador para recoger " + tile?.farmeable?.name + ":" + index)
 
-            index++
+            // index++
           }
         }
       }

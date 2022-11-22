@@ -1,0 +1,16 @@
+
+<ion-accordion-group [multiple]="true" #accordion>
+
+
+
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <p *ngIf="itemSelected != undefined">{{itemSelected.name}}</p>
+        <p *ngIf="itemSelected == undefined">Selecciona tu farmeable</p>
+      </ion-item>}}
+      <div class="ion-padding" slot="content" >
+        <p *ngFor="let i of getFarmeables()" (click)="selectItem(i)"> {{i.name}}</p>
+      </div>
+    </ion-accordion>
+  
+</ion-accordion-group>

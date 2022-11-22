@@ -1,4 +1,5 @@
 <div >
+  <ion-item><h1>Money: {{getMoney() | async}}</h1></ion-item>
   <ion-grid id="container" fixed="true">
     <ion-row>
       <ion-col style="background-color: #572B15;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTiles() | async">
