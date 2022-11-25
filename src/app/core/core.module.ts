@@ -5,16 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TileComponent } from './components/tile/tile.component';
 import { FarmComponent } from './components/farm/farm.component';
 import { TileDetailComponent } from './components/tile-detail/tile-detail.component';
-
+import { StoreComponent } from './components/store/store.component';
+import { FarmeableSelectableComponent } from './components/farmeable-selectable/farmeable-selectable.component';
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent],
   imports: [
     CommonModule,
     IonicModule,
     FormsModule,
-    ReactiveFormsModule,
-    
+    ReactiveFormsModule
     
   ],
   exports: [
@@ -24,7 +24,9 @@ import { TileDetailComponent } from './components/tile-detail/tile-detail.compon
     ReactiveFormsModule,
     TileComponent,
     FarmComponent,
-    TileDetailComponent
+    TileDetailComponent,
+    StoreComponent,
+    FarmeableSelectableComponent
     ]
 })
 export class CoreModule { 

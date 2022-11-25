@@ -1,2 +1,18 @@
 
-<app-farmeable-selectable></app-farmeable-selectable>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Compra de Elementos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div>
+  <form [formGroup]="form"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <app-farmeable-selectable formControlName="farmeable"></app-farmeable-selectable>
+    <ion-item>
+      <ion-label>Cantidad:</ion-label>
+      <ion-input type="number" min="0" placeholder="0" formControlName="amount"></ion-input>
+    </ion-item>
+    <ion-button  [disabled]="!form.valid" type="submit" >Pay</ion-button>
+  </form>
+</div>
+  

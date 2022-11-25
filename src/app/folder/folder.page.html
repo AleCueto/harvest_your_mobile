@@ -15,7 +15,7 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
   </div>
   <app-farm *ngIf="folder == 'Farm'" class="center"></app-farm>
+  <app-store *ngIf="folder == 'Store' "class="center" ></app-store>
 </ion-content>

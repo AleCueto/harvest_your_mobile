@@ -1,6 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
+import { lastValueFrom, Observable } from 'rxjs';
 import { CoreModule } from '../../core.module';
+import { Farmeable } from '../../models/farmeable.model';
+import { FarmeablesService } from '../../services/farmeables.service';
+import { MoneyService } from '../../services/money.service';
+
+
+interface CheckoutFarmeable {
+  farmeable: number,
+  amount:number 
+}
+
 
 @Component({
   selector: 'app-store',
@@ -9,12 +21,73 @@ import { CoreModule } from '../../core.module';
 })
 export class StoreComponent implements OnInit {
 
-  constructor() { }
+  form:FormGroup;
+  
 
-  @Input() form:FormGroup | undefined
+  price:number = 0;
+
+  cart:Array<CheckoutFarmeable> = []
+
+  
+  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService) { 
+
+      this.form = this.fb.group({
+        farmeable:['', [Validators.required]],
+        amount:['', [Validators.required]],
+    });
+  }
+  
 
 
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.price = 0
+    
+  }
+
+
+  async payFarmeables(value: CheckoutFarmeable){
+    var farmeable = this.farmeableSVC.getFarmeableById(value.farmeable)
+    if(value != null && farmeable)
+      this.price = farmeable.purchase_value * value.amount
+      console.log(this.price)
+
+      //Restamos el dinero
+      if(this.price)
+      console.log(lastValueFrom(this.moneySVC.money$))
+        if(await lastValueFrom(this.moneySVC.money$) >= this.price){
+          this.moneySVC.payMoney(this.price)
+          this.farmeableSVC.addFarmeable(value.farmeable, value.amount)
+        } else{
+
+        }
+  }
+
+
+  // getMoney():Observable<number>{
+  //   return this.moneySVC.money$;
+  // }
+
+
+  // refresh(ev) {
+  //   setTimeout(() => {
+  //     ev.detail.complete();
+  //   }, 3000);
+  // }
+
+addToChart(value: CheckoutFarmeable){
+
+  var farmeable = this.farmeableSVC.getFarmeableById(value.farmeable)
+  if(value != null && farmeable)
+    this.cart.push(value)
+
+}
+
+
+  onSubmit(){
+    this.payFarmeables(this.form.value);
+  }
+
+
 
 }

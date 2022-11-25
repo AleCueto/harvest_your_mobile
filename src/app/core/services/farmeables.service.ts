@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Farmeable } from '../models/farmeable.model';
 
 @Injectable({
@@ -32,8 +33,23 @@ export class FarmeablesService {
   ]
 
 
-  getFarmeables(): Farmeable[]{
-    return(this._farmeable)
+  getFarmeables:BehaviorSubject<Farmeable[]> = new BehaviorSubject(this._farmeable)
+
+  public farmeables$ = this.getFarmeables.asObservable();
+
+
+  getFarmeableById(id:number){
+    var farmeableToReturn = this._farmeable.find(p=>p.id==id)
+    return farmeableToReturn;
+
+  }
+
+  addFarmeable(id_farmeable:number, amountGetted:number){
+
+    var farmeable = this.getFarmeableById(id_farmeable)
+    if(farmeable != undefined)
+    farmeable.amount += amountGetted
+
   }
 
 

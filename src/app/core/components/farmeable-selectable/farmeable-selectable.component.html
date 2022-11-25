@@ -1,15 +1,14 @@
 
 <ion-accordion-group [multiple]="true" #accordion>
 
-
-
+  <!-- Selección item -->
     <ion-accordion value="first">
       <ion-item slot="header" color="light">
         <p *ngIf="itemSelected != undefined">{{itemSelected.name}}</p>
         <p *ngIf="itemSelected == undefined">Selecciona tu farmeable</p>
-      </ion-item>}}
+      </ion-item>
       <div class="ion-padding" slot="content" >
-        <p *ngFor="let i of getFarmeables()" (click)="selectItem(i)"> {{i.name}}</p>
+        <p *ngFor="let i of getFarmeables()" (click)="selectItem(i, accordion)"> {{i.name}}</p>
       </div>
     </ion-accordion>
   
