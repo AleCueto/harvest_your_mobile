@@ -17,5 +17,7 @@ export interface Farmeable {
     amount:number;
 
     //Visual
-    image:string;
+    image_beggining:string;
+    image_middle:string;
+    image_end:string;
 }

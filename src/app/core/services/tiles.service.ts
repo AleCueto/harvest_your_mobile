@@ -18,14 +18,17 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
     },
     {
       id:2,
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
 
     },
     {
@@ -33,7 +36,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
 
     },
     {
@@ -41,7 +46,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+      
 
     },
     {
@@ -49,7 +56,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
 
     },
     {
@@ -57,7 +66,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
 
     },
     {
@@ -65,7 +76,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
 
     },
     {
@@ -73,7 +86,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
 
     },
     {
@@ -81,7 +96,8 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
     
     },
     {
@@ -89,7 +105,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
     
     },
     {
@@ -97,7 +115,9 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
+
     
     },
     {
@@ -105,7 +125,8 @@ export class TilesService {
       farmeable:null, 
       image: "",
       create_date:null,
-      canRecolect:false
+      canRecolect:false,
+      imageFarmeable:""
     
     }
 

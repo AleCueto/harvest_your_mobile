@@ -11,24 +11,15 @@ export class FarmeablesService {
 
     {
       id:1,
-      name:"puerro",
-      seconds_to_harvest:20,
+      name:"onion",
+      seconds_to_harvest:5,
       purchase_value:50,
       sale_value:100,
       amount:3,
-      image: "/assets/images/puerro.png"
+      image_beggining:"/assets/images/farmeables/onion/onion-beginning.png",
+      image_middle:"/assets/images/farmeables/onion/onion-middle.png",
+      image_end:"/assets/images/farmeables/onion/onion-complete.png"
     },
-
-    {
-      id:2,
-      name:"rabano",
-      seconds_to_harvest:10,
-      purchase_value:50,
-      sale_value:100,
-      amount:1,
-      image: "/assets/images/rabano.png"
-    },
-    
 
   ]
 

@@ -66,7 +66,7 @@ export class FarmeableSelectableComponent implements OnInit, ControlValueAccesso
     // this.emitFarmeable.emit(farmSelected)
     accordion.value='';
     this.propagateChange(this.itemSelected.id);
-    console.log(this.itemSelected)
+    //console.log(this.itemSelected)
   }
 
 

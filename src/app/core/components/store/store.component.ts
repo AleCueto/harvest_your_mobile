@@ -48,19 +48,20 @@ export class StoreComponent implements OnInit {
 
   async payFarmeables(value: CheckoutFarmeable){
     var farmeable = this.farmeableSVC.getFarmeableById(value.farmeable)
-    if(value != null && farmeable)
+    if(value != null && farmeable){
       this.price = farmeable.purchase_value * value.amount
-      console.log(this.price)
+
 
       //Restamos el dinero
-      if(this.price)
-      console.log(lastValueFrom(this.moneySVC.money$))
-        if(await lastValueFrom(this.moneySVC.money$) >= this.price){
+        //if(await lastValueFrom(this.moneySVC.money$) >= this.price)
+        if(this.moneySVC.getMoney.value >= this.price){
           this.moneySVC.payMoney(this.price)
           this.farmeableSVC.addFarmeable(value.farmeable, value.amount)
         } else{
-
+          
         }
+    }
+
   }
 
 

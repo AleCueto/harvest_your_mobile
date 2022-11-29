@@ -1,7 +1,7 @@
 <ion-grid [fixed]="true">
     <ion-row>
       <ion-col  sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4"  *ngFor="let i of farmeables">
-        <ion-img (click)="printFarmeable(i)" src="{{i.image}}"></ion-img>
+        <ion-img (click)="printFarmeable(i)" src="{{i.image_end}}"></ion-img>
         <p>{{i.amount}}</p>
       </ion-col>
     </ion-row>

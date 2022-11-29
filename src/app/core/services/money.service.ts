@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class MoneyService {
 
   getMoney:BehaviorSubject<number> = new BehaviorSubject(this.money)
 
-  public money$ = this.getMoney.asObservable();
+  public money$:Observable<number> = this.getMoney.asObservable();
 
 
   public earnMoney(amountEarned:number){

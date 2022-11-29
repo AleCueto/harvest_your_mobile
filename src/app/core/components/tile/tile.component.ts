@@ -73,13 +73,14 @@ export class TileComponent implements OnInit {
       tile!.farmeable = farmeable;
       console.log(tile?.id + " |" + tile?.farmeable.name)
       tile!.create_date = moment();
+      tile!.image = tile!.farmeable.image_beggining
       // console.log(tile)
       var moment_to_harvest = tile?.create_date?.add(tile?.farmeable?.seconds_to_harvest, "seconds")
     }
     // this.tileInput!.farmeable = farmeable;
 
 
-    // var index = 1
+    var index = 1
 
     //Creation observable to control time
     var time_farming = this.tileSVC.actual_time
@@ -88,16 +89,21 @@ export class TileComponent implements OnInit {
     time_farming.subscribe(
       {
         next(_moment){
-          if(_moment.isAfter(moment_to_harvest)){
-            console.log("Puedes recoger: " + tile?.farmeable?.name)
-            tile!.canRecolect = true;
-          }else{
-            
-            // console.log(tile?.create_date?.add(tile?.farmeable?.days_to_harvest, "seconds"))
-            // console.log("contador para recoger " + tile?.farmeable?.name + ":" + index)
 
-            // index++
+          if(_moment.isAfter(moment_to_harvest) && tile!.farmeable){
+            console.log("Puedes recoger: " + tile?.farmeable?.name)
+            tile!.image = tile!.farmeable.image_end
+            tile!.canRecolect = true;
+          }else if (_moment.isAfter(moment_to_harvest?.subtract(farmeable.seconds_to_harvest/2), "seconds") && tile!.farmeable){
+            
+            tile!.image = tile!.farmeable.image_middle
+
           }
+            
+            //console.log(tile?.create_date?.add(tile?.farmeable?.days_to_harvest, "seconds"))
+            console.log("contador para recoger " + tile?.farmeable?.name + ":" + index)
+
+            index++
         }
       }
     )
