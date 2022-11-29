@@ -88,21 +88,23 @@ export class TileComponent implements OnInit {
 
     time_farming.subscribe(
       {
-        next(_moment){
+        next(_moment:moment.Moment){
+          
+          if(tile!.farmeable){
 
-          if(_moment.isAfter(moment_to_harvest) && tile!.farmeable){
+          if(_moment.isAfter(moment_to_harvest)){
             console.log("Puedes recoger: " + tile?.farmeable?.name)
             tile!.image = tile!.farmeable.image_end
             tile!.canRecolect = true;
-          }else if (_moment.isAfter(moment_to_harvest?.subtract(farmeable.seconds_to_harvest/2), "seconds") && tile!.farmeable){
-            
-            tile!.image = tile!.farmeable.image_middle
-
+          }else if(index > tile!.farmeable.seconds_to_harvest/2){
+          // console.log(_moment.toISOString(), moment_to_harvest?.toISOString());
+          // console.log("Estoy dentro");
+          tile!.image = tile!.farmeable.image_middle
           }
-            
+          
+        }
             //console.log(tile?.create_date?.add(tile?.farmeable?.days_to_harvest, "seconds"))
             console.log("contador para recoger " + tile?.farmeable?.name + ":" + index)
-
             index++
         }
       }

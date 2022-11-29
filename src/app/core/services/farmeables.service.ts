@@ -12,7 +12,7 @@ export class FarmeablesService {
     {
       id:1,
       name:"onion",
-      seconds_to_harvest:5,
+      seconds_to_harvest:6,
       purchase_value:50,
       sale_value:100,
       amount:3,
