@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import * as moment from 'moment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Tile } from '../models/tile.model';
+import { Farm } from '../models/farm.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TilesService {
 
+  public index:number = 0;
 
   public tiles:number = 3
 
@@ -19,7 +22,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
     },
     {
       id:2,
@@ -27,7 +31,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
 
     },
@@ -37,7 +42,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
 
     },
@@ -47,7 +53,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
       
 
     },
@@ -57,7 +64,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
 
     },
@@ -67,7 +75,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
 
     },
@@ -77,7 +86,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
 
     },
@@ -87,7 +97,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
 
     },
@@ -97,7 +108,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
     
     },
     {
@@ -106,7 +118,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
     
     },
@@ -116,7 +129,8 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
 
     
     },
@@ -126,12 +140,15 @@ export class TilesService {
       image: "",
       create_date:null,
       canRecolect:false,
-      imageFarmeable:""
+      imageFarmeable:"",
+      farms:[0]
     
     }
 
-
   ]
+
+  
+
 
   private tilesSubject:BehaviorSubject<Tile[]> = new BehaviorSubject(this._tile)
   public tiles$ = this.tilesSubject.asObservable();
@@ -144,6 +161,31 @@ export class TilesService {
     }, 1000);
 
   })
+
+
+  public createTile(initialFarm:Farm):Tile{
+
+    var index = this._tile.length
+  
+    var newEmptyTile:Tile = {
+
+      id:index,
+      farmeable:null, 
+      image: "",
+      create_date:null,
+      canRecolect:false,
+      imageFarmeable:"",
+      farms:[initialFarm.id]
+
+    }
+
+    //Prob-1: ESTO AÑADE UN NUEVO TILE CADA VEZ?
+
+    this._tile.push(newEmptyTile)
+    
+    return newEmptyTile
+
+  }
 
   constructor() {
 

@@ -35,3 +35,12 @@ ion-menu-button {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+
+ion-content.folder{
+  .container{
+    background-color: #FFCC01;
+    width:100%;
+    height:100%;
+  }
+}

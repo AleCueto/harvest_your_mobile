@@ -1,5 +1,7 @@
 import { Farmeable } from "./farmeable.model";
 import * as moment from 'moment';
+import { Farm } from "./farm.model";
+
 
 export interface Tile{
     
@@ -12,4 +14,7 @@ export interface Tile{
 
     //Control recolección
     canRecolect:boolean;
+
+    //Granjas (modularidad)
+    farms:Array<Number>;
 }

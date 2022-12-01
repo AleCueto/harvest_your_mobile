@@ -1,10 +1,28 @@
-<div >
-  <ion-item><h1>Money: {{getMoney() | async}}</h1></ion-item>
-  <ion-grid id="container" fixed="true">
+<div class="container"  *ngIf="farm != null">
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1>Money: {{getMoney() | async}}</h1> 
+        </ion-col>
+
+        <ion-col>
+          <h1 style="text-align: right;">Granja: {{farmName}}</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-grid fixed="true">
     <ion-row>
-      <ion-col style="background-color: #572B15;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTiles() | async">
+      <ion-col style="background-color: #572B15;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTilesByFarm(farm.id)">
         <app-tile [tileInput]="item"></app-tile>
       </ion-col>
     </ion-row>
   </ion-grid>
+</div>
+
+<div *ngIf="farm == null">
+<ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="farmName"></ion-input>
+<ion-button *ngIf="farmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+
 </div>

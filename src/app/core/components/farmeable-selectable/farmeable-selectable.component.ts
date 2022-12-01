@@ -26,7 +26,7 @@ export class FarmeableSelectableComponent implements OnInit, ControlValueAccesso
 
   itemSelected:Farmeable | undefined
 
-  @Output() emitFarmeable = new EventEmitter<Farmeable>()
+  //@Output() emitFarmeable = new EventEmitter<Farmeable>()
 
   constructor(private farmeableSVC:FarmeablesService) { }
 
