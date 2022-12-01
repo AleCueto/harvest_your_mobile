@@ -7,6 +7,9 @@ import { FarmComponent } from './components/farm/farm.component';
 import { TileDetailComponent } from './components/tile-detail/tile-detail.component';
 import { StoreComponent } from './components/store/store.component';
 import { FarmeableSelectableComponent } from './components/farmeable-selectable/farmeable-selectable.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { createTranslateLoader } from './utils/translate';
 
 @NgModule({
   declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent],
@@ -14,7 +17,16 @@ import { FarmeableSelectableComponent } from './components/farmeable-selectable/
     CommonModule,
     IonicModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forChild({
+    loader: {
+    provide: TranslateLoader,
+    useFactory: (createTranslateLoader),
+    deps: [HttpClient]
+    }
+    }),
+    ReactiveFormsModule,
     
   ],
   exports: [
@@ -26,7 +38,9 @@ import { FarmeableSelectableComponent } from './components/farmeable-selectable/
     FarmComponent,
     TileDetailComponent,
     StoreComponent,
-    FarmeableSelectableComponent
+    FarmeableSelectableComponent,
+    TranslateModule,
+    HttpClientModule
     ]
 })
 export class CoreModule { 
