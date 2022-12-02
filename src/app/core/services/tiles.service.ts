@@ -17,6 +17,15 @@ export class TilesService {
   public _tile : Tile[] = [
 
     {
+      id:0,
+      farmeable:null, 
+      image: "",
+      create_date:null,
+      canRecolect:false,
+      imageFarmeable:"",
+      farms:[0]
+    },
+    {
       id:1,
       farmeable:null, 
       image: "",
@@ -100,7 +109,6 @@ export class TilesService {
       imageFarmeable:"",
       farms:[0]
 
-
     },
     {
       id:9,
@@ -131,23 +139,9 @@ export class TilesService {
       canRecolect:false,
       imageFarmeable:"",
       farms:[0]
-
-    
-    },
-    {
-      id:12,
-      farmeable:null, 
-      image: "",
-      create_date:null,
-      canRecolect:false,
-      imageFarmeable:"",
-      farms:[0]
     
     }
-
   ]
-
-  
 
 
   private tilesSubject:BehaviorSubject<Tile[]> = new BehaviorSubject(this._tile)

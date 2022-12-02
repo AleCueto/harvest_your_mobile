@@ -2,6 +2,14 @@
 
     "farm":{
         "title":"Farm"
+    },
+
+    "store":{
+        "title":"Store"
+    },
+    "generic":{
+        "money":"Money"
     }
+
 
 }

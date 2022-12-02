@@ -10,7 +10,7 @@ export class AppComponent {
   public appPages = [
     { title: 'farm' + ".title" , url: '/folder/Farm', icon: 'mail' },
     { title: 'Store', url: '/folder/Store', icon: 'money' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
+    { title: 'Farms', url: '/folder/Farmlist', icon: 'heart' },
     { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },

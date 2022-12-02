@@ -10,9 +10,10 @@ import { FarmeableSelectableComponent } from './components/farmeable-selectable/
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { createTranslateLoader } from './utils/translate';
+import { FarmListComponent } from './components/farm-list/farm-list.component';
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -40,7 +41,8 @@ import { createTranslateLoader } from './utils/translate';
     StoreComponent,
     FarmeableSelectableComponent,
     TranslateModule,
-    HttpClientModule
+    HttpClientModule,
+    FarmListComponent
     ]
 })
 export class CoreModule { 

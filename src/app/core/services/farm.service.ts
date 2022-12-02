@@ -18,7 +18,7 @@ export class FarmService {
   public _farm: Farm[] = [
 
     {
-      id:1,
+      id:0,
       name:"Granja principal",
       tileAmount:12,
       tiles: [],
@@ -61,11 +61,16 @@ export class FarmService {
 
   }
 
+
   getLasFarm():Farm{
     return this._farm[this._farm.length -1]
   }
 
-  
+    //Farm List
+  private farmsSubject:BehaviorSubject<Farm[]> = new BehaviorSubject(this._farm);
+  public farms$ = this.farmsSubject.asObservable();
+
+    //Active farm
     private farmSubject:BehaviorSubject<Farm|null> = new BehaviorSubject(this.selectedFarm);
     public farm$ = this.farmSubject.asObservable();
   
