@@ -1,31 +1,39 @@
-<div class="container"  *ngIf="farm != null">
-  <ion-item>
+
+<div class="container"  *ngIf="farm != null" class="wrapper">
+
+
+  <ion-item class="square">
     <ion-grid>
       <ion-row>
         <ion-col>
           <h1>{{ "generic.money"| translate}} {{getMoney() | async}}</h1> 
         </ion-col>
-
+  
         <ion-col>
           <h1 style="text-align: right;">{{"farm.title"|translate}}: {{farmName}}</h1>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-item>
-  <ion-grid fixed="true">
+
+  <ion-grid fixed="true" class="square">
     <ion-row>
-      <ion-col style="background-color: #572B15;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTilesByFarm(farm.id)">
+    </ion-row>
+    <ion-row>
+      <ion-col style="background-color: #B6E7B4;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTilesByFarm(farm.id)">
         <app-tile [tileInput]="item"></app-tile>
       </ion-col>
     </ion-row>
+
+    <ion-row></ion-row>
   </ion-grid>
 
   <!--Creación de nueva granja-->
-  <div>
+  <!-- <div>
     <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
     <ion-button *ngIf="newFarmName!= ''" (click)="createFarm()">Crea una nueva granja</ion-button>
     
-    </div>
+    </div> -->
 
 </div>
 

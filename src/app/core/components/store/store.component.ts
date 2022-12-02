@@ -21,8 +21,9 @@ interface CheckoutFarmeable {
 })
 export class StoreComponent implements OnInit {
 
-  form:FormGroup;
+  form_farmeable:FormGroup;
   
+  storeSelected:string = "farmStore"
 
   price:number = 0;
 
@@ -31,7 +32,7 @@ export class StoreComponent implements OnInit {
   
   constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService) { 
 
-      this.form = this.fb.group({
+      this.form_farmeable = this.fb.group({
         farmeable:['', [Validators.required]],
         amount:['', [Validators.required]],
     });
@@ -86,7 +87,7 @@ addToChart(value: CheckoutFarmeable){
 
 
   onSubmit(){
-    this.payFarmeables(this.form.value);
+    this.payFarmeables(this.form_farmeable.value);
   }
 
 

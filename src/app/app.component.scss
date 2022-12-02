@@ -118,3 +118,11 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 }
 
+@font-face{
+  font-family: Fredoka;
+  src: url('/assets/fonts/fredoka.woff2');
+}
+
+*{
+  font-family: Fredoka !important;
+}

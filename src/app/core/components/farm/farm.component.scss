@@ -11,3 +11,20 @@
 //     width: 100%;
 //     border-radius: 20%;
 // }
+
+*{
+    font-family: Fredoka;
+}
+
+.square {
+    width: 70%;
+    margin: 1%;
+}
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}

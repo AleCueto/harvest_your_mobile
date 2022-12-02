@@ -1,0 +1,17 @@
+*{
+    font-family: Fredoka;
+}
+
+.square {
+    width: 70%;
+    margin: 1%;
+}
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    justify-items: center;
+}

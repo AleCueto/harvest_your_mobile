@@ -17,4 +17,6 @@ export interface Tile{
 
     //Granjas (modularidad)
     farms:Array<Number>;
+
+
 }
