@@ -15,10 +15,12 @@
   </ion-header>
 
   <div class="container">
-    <app-farm *ngIf="folder == 'Farm'" class="center"></app-farm>
-  <app-store *ngIf="folder == 'Store' "class="center" ></app-store>
-  <app-farm-list *ngIf="folder == 'Farmlist' "class="center" ></app-farm-list>
+    <app-farm *ngIf="folder == 'Farm'" ></app-farm>
+  <app-store *ngIf="folder == 'Store' " ></app-store>
+  <app-farm-list *ngIf="folder == 'Farmlist'" ></app-farm-list>
 
   </div>
+
+
   
 </ion-content>

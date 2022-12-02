@@ -73,14 +73,17 @@ export class FarmComponent implements OnInit, OnDestroy {
   }
 
 
-  createFirstFarm(){
+  createFarm(){
     
       this.farmSVC.createFarm(this.farmName)
       
       
       // this.setSelectedFarm(this.farmSVC.getLasFarm())
       // if(this.farmSelected == true){
-        this.farmSVC.setSelectedFarm(this.farmSVC.getLasFarm())
+        if(this.farm == null){
+
+          this.farmSVC.setSelectedFarm(this.farmSVC.getLasFarm())
+        }
       // }
       console.log(this.farmSVC.getLasFarm())
     }
