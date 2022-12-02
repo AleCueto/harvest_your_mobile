@@ -1,7 +1,7 @@
 
     <div>
       
-      <ion-item (click)="setActiveFarm(i)" *ngFor="let i of getFarms()">
+      <ion-item disabled={{isEnabled(i)}} (click)="setActiveFarm(i)" *ngFor="let i of getFarms()">
         <p>{{i.name}}</p>
       </ion-item>
       

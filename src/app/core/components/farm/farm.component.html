@@ -20,17 +20,18 @@
     </ion-row>
   </ion-grid>
 
-
+  <!--Creación de nueva granja-->
   <div>
-    <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="farmName"></ion-input>
-    <ion-button *ngIf="farmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+    <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+    <ion-button *ngIf="newFarmName!= ''" (click)="createFarm()">Crea una nueva granja</ion-button>
     
     </div>
 
 </div>
 
+<!--Creación de nueva granja-->
 <div *ngIf="farm == null">
-<ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="farmName"></ion-input>
-<ion-button *ngIf="farmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+<ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+<ion-button *ngIf="newFarmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
 
 </div>

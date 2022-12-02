@@ -30,6 +30,10 @@ export class FarmListComponent implements OnInit {
     this.farmSVC.setSelectedFarm(farm)
   }
 
+  isEnabled(farm:Farm):boolean{
+    return farm.id == this.farmSVC.selectedFarm?.id
+  }
+
   getFarms(){
     return this.farms
   }

@@ -20,6 +20,7 @@ export class FarmComponent implements OnInit, OnDestroy {
   farmSelected:Boolean = false
   farm:Farm|null = null;
   farmName:string = ""
+  newFarmName:string = ""
 
   //Lista de todas las casillas.
   // tileList:Tile[] = this.tiles._tile
@@ -75,7 +76,8 @@ export class FarmComponent implements OnInit, OnDestroy {
 
   createFarm(){
     
-      this.farmSVC.createFarm(this.farmName)
+      this.farmSVC.createFarm(this.newFarmName)
+      
       
       
       // this.setSelectedFarm(this.farmSVC.getLasFarm())
@@ -84,6 +86,10 @@ export class FarmComponent implements OnInit, OnDestroy {
 
           this.farmSVC.setSelectedFarm(this.farmSVC.getLasFarm())
         }
+
+        if(this.farm)
+        this.farmName = this.farm?.name
+
       // }
       console.log(this.farmSVC.getLasFarm())
     }
