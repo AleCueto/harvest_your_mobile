@@ -73,7 +73,7 @@ export class FarmComponent implements OnInit, OnDestroy {
   }
 
 
-  createFarm(){
+  createFirstFarm(){
     
       this.farmSVC.createFarm(this.farmName)
       

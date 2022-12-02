@@ -3,11 +3,11 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <h1>Money: {{getMoney() | async}}</h1> 
+          <h1>{{ "generic.money"| translate}} {{getMoney() | async}}</h1> 
         </ion-col>
 
         <ion-col>
-          <h1 style="text-align: right;">Granja: {{farmName}}</h1>
+          <h1 style="text-align: right;">{{"farm.title"|translate}}: {{farmName}}</h1>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -19,10 +19,13 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+
+
 </div>
 
 <div *ngIf="farm == null">
 <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="farmName"></ion-input>
-<ion-button *ngIf="farmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+<ion-button *ngIf="farmName != ''" (click)="createFirstFarm()">Crea una nueva granja</ion-button>
 
 </div>
