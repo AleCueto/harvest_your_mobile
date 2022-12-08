@@ -157,6 +157,26 @@ export class TilesService {
   })
 
 
+  addTile(newId:number){
+    
+    var index = this._tile.length
+
+    var newEmptyTile:Tile = {
+
+      id:index,
+      farmeable:null, 
+      image: "",
+      create_date:null,
+      canRecolect:false,
+      imageFarmeable:"",
+      farms:[newId]
+
+    }
+
+    this._tile.push(newEmptyTile)
+  }
+
+
   public createTile(initialFarm:Farm):Tile{
 
     var index = this._tile.length
@@ -185,4 +205,7 @@ export class TilesService {
 
 
   }
+
+
+  
 }

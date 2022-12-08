@@ -4,14 +4,17 @@ import { ModalController } from '@ionic/angular';
 import { lastValueFrom, Observable } from 'rxjs';
 import { CoreModule } from '../../core.module';
 import { Farmeable } from '../../models/farmeable.model';
+import { FarmService } from '../../services/farm.service';
 import { FarmeablesService } from '../../services/farmeables.service';
 import { MoneyService } from '../../services/money.service';
+import { TilesService } from '../../services/tiles.service';
 
 
 interface CheckoutFarmeable {
   farmeable: number,
   amount:number 
 }
+
 
 
 @Component({
@@ -22,15 +25,18 @@ interface CheckoutFarmeable {
 export class StoreComponent implements OnInit {
 
   form_farmeable:FormGroup;
-  
-  storeSelected:string = "farmStore"
+  newFarmName:string = ""
+
+  storeSelected:string = "farmeables"
 
   price:number = 0;
+  tilePrice:number = 100;
+  farmPrice:number = 0;
 
   cart:Array<CheckoutFarmeable> = []
 
   
-  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService) { 
+  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService, private tileSCV:TilesService, private farmSVC:FarmService) { 
 
       this.form_farmeable = this.fb.group({
         farmeable:['', [Validators.required]],
@@ -46,6 +52,7 @@ export class StoreComponent implements OnInit {
     
   }
 
+  
 
   async payFarmeables(value: CheckoutFarmeable){
     var farmeable = this.farmeableSVC.getFarmeableById(value.farmeable)
@@ -64,7 +71,6 @@ export class StoreComponent implements OnInit {
     }
 
   }
-
 
   // getMoney():Observable<number>{
   //   return this.moneySVC.money$;
@@ -92,4 +98,38 @@ addToChart(value: CheckoutFarmeable){
 
 
 
+  selectItem(storenName:string){
+    this.storeSelected = storenName
+  }
+
+  createFarm(){
+    
+    
+    if(this.moneySVC.getMoney.value >= this.farmPrice){
+      this.moneySVC.payMoney(this.tilePrice)
+      this.farmSVC.createFarm(this.newFarmName)
+      this.farmSVC.setSelectedFarm(this.farmSVC.getLasFarm()) 
+    } else{
+      
+    }
+    
+    console.log(this.farmSVC.getLasFarm())
+  }
+
+
+
+  createTile(){
+
+    if(this.moneySVC.getMoney.value >= this.tilePrice && this.farmSVC.selectedFarm?.id){
+      this.moneySVC.payMoney(this.tilePrice)
+      this.tileSCV.addTile(this.farmSVC.selectedFarm?.id)
+    } else{
+      
+    }
+
+
+  }
+
+
+  
 }

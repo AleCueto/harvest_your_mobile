@@ -5,30 +5,46 @@
   
 
     <ion-segment value="farmeables">
-      <ion-segment-button value="farmeables">
+      <ion-segment-button value="farmeables" (click)="selectItem('farmeables')">
         <ion-label>Farmeables</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="tiles">
+      <ion-segment-button value="tiles" (click)="selectItem('tiles')">
         <ion-label>Tiles</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="farms">
+      <ion-segment-button value="farms" (click)="selectItem('farms')">
         <ion-label>Farms</ion-label>
       </ion-segment-button>
     </ion-segment>
     
-  <div *ngIf="storeSelected == 'farmStore' " style="background-color: rgb(230, 230, 230) !important;" class="wrapper">
-    <form [formGroup]="form_farmeable"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="square">
-      <app-farmeable-selectable formControlName="farmeable"></app-farmeable-selectable>
-      <ion-item>
-        <ion-label>Cantidad:</ion-label>
-        <ion-input type="number" min="0" placeholder="0" formControlName="amount"></ion-input>
-      </ion-item>
-      <ion-button  [disabled]="!form_farmeable.valid" type="submit" >Pay</ion-button>
-    </form>
+  <ng-container [ngSwitch]="storeSelected">
+    <div *ngSwitchCase="'farmeables' " style="background-color: rgb(230, 230, 230) !important;" class="wrapper">
+      <form [formGroup]="form_farmeable"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="square">
+        <app-farmeable-selectable formControlName="farmeable"></app-farmeable-selectable>
+        <ion-item>
+          <ion-label>Cantidad:</ion-label>
+          <ion-input type="number" min="0" placeholder="0" formControlName="amount"></ion-input>
+        </ion-item>
+        <ion-button  [disabled]="!form_farmeable.valid" type="submit" >Pay</ion-button>
+      </form>
+    </div>
+
+    <div *ngSwitchCase="'farms'">
+
+      <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+      <ion-button *ngIf="newFarmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+
+    </div>
+
+    <div *ngSwitchCase="'tiles' " style="background-color: rgb(230, 230, 230) !important;" class="wrapper">
+      <ion-button (click)="createTile()">Add Tile</ion-button>
+    </div>
+
+    <div class="wrapper">
+      <ion-img src="/assets/images/store/tendero.png" style="margin-top: 3%;"></ion-img>
+    </div>
+  </ng-container>
+
+  
   </div>
-  <div class="wrapper">
-    <ion-img src="/assets/images/store/tendero.png" style="margin-top: 3%;"></ion-img>
-  </div>
-</div>
 
 

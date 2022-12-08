@@ -1,0 +1,22 @@
+.square {
+    width: 70%;
+    margin: 1%;
+}
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.slider {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+.slider-slide {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}

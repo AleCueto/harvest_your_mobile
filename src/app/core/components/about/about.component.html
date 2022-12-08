@@ -1,0 +1,64 @@
+
+
+<ion-content>
+
+  <div class="container" class="wrapper">
+    
+    <h1 class="square">
+      About me:
+    </h1>
+    <ion-img src="/assets/images/about/aboutPhoto.png" alt="Developer photo"></ion-img>
+    <p>Mi nombre es Alejandro Cueto Jiménez, desarrollador de aplicaciones y videojuegos.</p>
+    
+    
+    <ion-grid>
+      <ion-row>
+        <ion-button href="mailto:alecuetocontacto@gmail.com" target="_blank">
+          <ion-icon slot="icon-only" name="mail-outline"></ion-icon>
+        </ion-button>
+        
+        <ion-button href="https://mobile.twitter.com/HIKYRO321" target="_blank">
+          <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+        </ion-button>
+        
+        <ion-button href="https://mobile.twitter.com/HIKYRO321" target="_blank">
+          <ion-icon slot="icon-only" name="game-controller-outline"></ion-icon>
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+    <!--Creación de nueva granja-->
+    <!-- <div>
+      <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+      <ion-button *ngIf="newFarmName!= ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+      
+    </div> -->
+    
+  </div>
+  
+  <div class="container" class="wrapper">
+    
+    <h1>Other jobs</h1>
+    
+    <ion-slides pager="true" class="square">
+      <ion-slide>
+        <ion-img src="/assets/images/about/portfolio1.png" alt="Developer photo"></ion-img>
+      </ion-slide>
+      
+      <ion-slide>
+        <ion-img src="/assets/images/about/portfolio2.png" alt="Developer photo"></ion-img>
+      </ion-slide>
+      
+      <ion-slide>
+        <ion-img src="/assets/images/about/portfolio3.png" alt="Developer photo"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  
+
+  <ion-footer [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

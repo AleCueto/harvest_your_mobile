@@ -11,9 +11,9 @@ export class AppComponent {
     { title: 'farm' + ".title" , url: '/folder/Farm', icon: 'mail' },
     { title: 'Store', url: '/folder/Store', icon: 'money' },
     { title: 'Farms', url: '/folder/Farmlist', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'About', url: '/folder/About', icon: 'archive' },
+    // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
+    // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = [/*'Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'*/];
   constructor(
