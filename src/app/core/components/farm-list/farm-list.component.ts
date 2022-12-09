@@ -38,4 +38,13 @@ export class FarmListComponent implements OnInit {
     return this.farms
   }
 
+
+  editFarm(){
+    
+  }
+
+  deleteFarm(id:number){
+    this.farmSVC.deleteFarm(id)
+  }
+
 }

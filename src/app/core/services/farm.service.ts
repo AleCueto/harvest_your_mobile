@@ -62,6 +62,13 @@ export class FarmService {
   }
 
 
+  deleteFarm(id:number){
+    this._farm.findIndex
+    this._farm = this._farm.filter(w=>w.id != id); 
+    this.farmsSubject.next(this._farm);
+  }
+
+
   getLasFarm():Farm{
     return this._farm[this._farm.length -1]
   }

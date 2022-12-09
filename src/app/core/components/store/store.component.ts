@@ -31,7 +31,7 @@ export class StoreComponent implements OnInit {
 
   price:number = 0;
   tilePrice:number = 100;
-  farmPrice:number = 0;
+  farmPrice:number = 300;
 
   cart:Array<CheckoutFarmeable> = []
 
@@ -106,7 +106,7 @@ addToChart(value: CheckoutFarmeable){
     
     
     if(this.moneySVC.getMoney.value >= this.farmPrice){
-      this.moneySVC.payMoney(this.tilePrice)
+      this.moneySVC.payMoney(this.farmPrice)
       this.farmSVC.createFarm(this.newFarmName)
       this.farmSVC.setSelectedFarm(this.farmSVC.getLasFarm()) 
     } else{
