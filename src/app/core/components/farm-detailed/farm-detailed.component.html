@@ -1,0 +1,7 @@
+<form *ngIf="form_edit" [formGroup]="form_edit"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="square">
+  <ion-item>
+    <ion-label>Nombre:</ion-label>
+    <ion-input type="text"  formControlName="farmName"></ion-input>
+  </ion-item>
+  <ion-button [disabled]="!form_edit.valid" type="submit" >Edit</ion-button>
+</form>

@@ -6,6 +6,10 @@ import { Farm } from '../models/farm.model';
 import { Tile } from '../models/tile.model';
 import { TilesService } from './tiles.service';
 
+interface objectEditable {
+    id:number,
+    farmName:string
+}
 
 
 @Injectable({
@@ -87,6 +91,14 @@ export class FarmService {
 
     this.selectedFarm = selected_Farm
     this.farmSubject.next(selected_Farm)
+  }
+
+
+  editFarm(object:objectEditable){
+
+    var farmToEdit = this._farm[object.id];
+    farmToEdit.name = object.farmName
+
   }
 
   

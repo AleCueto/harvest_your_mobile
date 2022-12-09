@@ -1,6 +1,6 @@
 import { Component, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { IonAccordionGroup } from '@ionic/angular';
 import { CoreModule } from '../../core.module';
 import { Farmeable } from '../../models/farmeable.model';
@@ -25,6 +25,7 @@ export const USER_PROFILE_VALUE_ACCESSOR: any = {
 export class FarmeableSelectableComponent implements OnInit, ControlValueAccessor {
 
   itemSelected:Farmeable | undefined
+  form_edit:FormGroup | undefined;
 
   //@Output() emitFarmeable = new EventEmitter<Farmeable>()
 
@@ -32,6 +33,10 @@ export class FarmeableSelectableComponent implements OnInit, ControlValueAccesso
 
   
   ngOnInit() {
+
+  //   this.form_edit = this.fb.group({
+  //     farmName:['', [Validators.required]],
+  // });
 
   }
 

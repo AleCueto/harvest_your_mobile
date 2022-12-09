@@ -36,7 +36,7 @@ export class StoreComponent implements OnInit {
   cart:Array<CheckoutFarmeable> = []
 
   
-  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService, private tileSCV:TilesService, private farmSVC:FarmService) { 
+  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService, private tileSCV:TilesService, private farmSVC:FarmService, ) { 
 
       this.form_farmeable = this.fb.group({
         farmeable:['', [Validators.required]],

@@ -12,9 +12,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { createTranslateLoader } from './utils/translate';
 import { FarmListComponent } from './components/farm-list/farm-list.component';
 import { AboutComponent } from './components/about/about.component';
+import { FarmDetailedComponent } from './components/farm-detailed/farm-detailed.component';
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -44,7 +45,9 @@ import { AboutComponent } from './components/about/about.component';
     TranslateModule,
     HttpClientModule,
     FarmListComponent,
-    AboutComponent
+    AboutComponent,
+    FarmDetailedComponent
+    
     ]
 })
 export class CoreModule { 
