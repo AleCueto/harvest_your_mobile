@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos del farmeable</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        Nombre
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce tu nombre" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Cantidad
+      </ion-label>
+      <ion-input type="number" placeholder="Introduce el número de farmeables" formControlName="amount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Image Beginning
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce la primera imagen" formControlName="image_beggining"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Image Middle
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce la segunda imagen" formControlName="image_middle"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Image End
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce la tercera imagen" formControlName="image_end"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Purchase Value
+      </ion-label>
+      <ion-input type="number" placeholder="Introduce el valor de compra" formControlName="purchase_value"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Sale Value
+      </ion-label>
+      <ion-input type="number" placeholder="Introduce el valor de compra" formControlName="sale_value"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Seconds to harvest
+      </ion-label>
+      <ion-input type="number" placeholder="Introduce los segundos para recoger" formControlName="seconds_to_harvest"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
