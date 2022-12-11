@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'farm' + ".title" , url: '/folder/Farm', icon: 'mail' },
     { title: 'Store', url: '/folder/Store', icon: 'money' },
     { title: 'Farms', url: '/folder/Farmlist', icon: 'heart' },
+    { title: 'Creator', url: '/folder/Creator', icon: 'add' },
     { title: 'About', url: '/folder/About', icon: 'archive' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },

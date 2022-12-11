@@ -32,6 +32,7 @@ export class StoreComponent implements OnInit {
   price:number = 0;
   tilePrice:number = 100;
   farmPrice:number = 300;
+  tilesToBuy:number = 0;
 
   cart:Array<CheckoutFarmeable> = []
 
@@ -116,13 +117,16 @@ addToChart(value: CheckoutFarmeable){
     console.log(this.farmSVC.getLasFarm())
   }
 
+  getMoney(){
+    return this.moneySVC.money$;
+  }
 
+  createTiles(cantity:number){
 
-  createTile(){
 
     if(this.moneySVC.getMoney.value >= this.tilePrice && this.farmSVC.selectedFarm?.id){
-      this.moneySVC.payMoney(this.tilePrice)
-      this.tileSCV.addTile(this.farmSVC.selectedFarm?.id)
+        this.moneySVC.payMoney(this.tilePrice)
+        this.tileSCV.addTile(this.farmSVC.selectedFarm?.id)
     } else{
       
     }

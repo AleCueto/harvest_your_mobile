@@ -18,29 +18,58 @@
     
   <ng-container [ngSwitch]="storeSelected">
     <div *ngSwitchCase="'farmeables' " style="background-color: rgb(230, 230, 230) !important;" class="wrapper">
+      <h1>{{ "generic.money"| translate}} {{getMoney() | async}}</h1> 
       <form [formGroup]="form_farmeable"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="square">
         <app-farmeable-selectable formControlName="farmeable"></app-farmeable-selectable>
         <ion-item>
           <ion-label>Cantidad:</ion-label>
           <ion-input type="number" min="0" placeholder="0" formControlName="amount"></ion-input>
         </ion-item>
-        <ion-button  [disabled]="!form_farmeable.valid" type="submit" >Pay</ion-button>
+        <ion-button class="square" style="margin: 15px;"  [disabled]="!form_farmeable.valid" type="submit" >Pay</ion-button>
       </form>
     </div>
 
-    <div *ngSwitchCase="'farms'">
+    <div *ngSwitchCase="'farms'" style="background-color: rgb(230, 230, 230) !important;" class="wrapper">
+      <h1>{{ "generic.money"| translate}} {{getMoney() | async}}</h1> 
 
-      <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
-      <ion-button *ngIf="newFarmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+      <div class="square">
+        <ion-item>
+          ¡Compra una nueva granja!
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+        </ion-item>
+      </div>
+      
+      <ion-button class="square" [disabled]="newFarmName == ''" (click)="createFarm()">Crea una nueva granja</ion-button>
 
     </div>
 
+
+
+
+    <!--  -->
     <div *ngSwitchCase="'tiles' " style="background-color: rgb(230, 230, 230) !important;" class="wrapper">
-      <ion-button (click)="createTile()">Add Tile</ion-button>
+      <h1>{{ "generic.money"| translate}} {{getMoney() | async}}</h1> 
+
+      <!-- <ion-input type="number" placeholder="Escribe el nombre de tu granja" [(ngModel)]="tilesToBuy"></ion-input> -->
+
+      <div class="square">
+        <ion-item>
+          ¡Compra una nueva granja!
+        </ion-item>
+        <ion-item>
+          <!-- <ion-label>Cantidad:</ion-label> -->
+          <!-- <ion-input type="number" min="0" placeholder="0" formControlName="amount" [(ngModel)]="tilesToBuy"></ion-input> -->
+          El precio de la casilla es: {{tilePrice}} monedas
+        </ion-item>
+      </div>
+      <!--CONTINUAR  TIene que ser un formulario-->
+      <ion-button [disabled]="tilesToBuy > 0" (click)="createTiles(tilesToBuy)">Add Tile</ion-button>
     </div>
 
     <div class="wrapper">
-      <ion-img src="/assets/images/store/tendero.png" style="margin-top: 3%;"></ion-img>
+      <ion-img src="/assets/images/store/tendero.png" style="margin-top: 1%;"></ion-img>
     </div>
   </ng-container>
 

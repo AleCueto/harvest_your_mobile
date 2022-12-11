@@ -13,9 +13,10 @@ import { createTranslateLoader } from './utils/translate';
 import { FarmListComponent } from './components/farm-list/farm-list.component';
 import { AboutComponent } from './components/about/about.component';
 import { FarmDetailedComponent } from './components/farm-detailed/farm-detailed.component';
+import { FarmeableCreatorComponent } from './components/farmeable-creator/farmeable-creator.component';
 
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -46,7 +47,8 @@ import { FarmDetailedComponent } from './components/farm-detailed/farm-detailed.
     HttpClientModule,
     FarmListComponent,
     AboutComponent,
-    FarmDetailedComponent
+    FarmDetailedComponent,
+    FarmeableCreatorComponent
     
     ]
 })

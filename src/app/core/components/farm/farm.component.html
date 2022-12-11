@@ -1,6 +1,5 @@
 
-<div class="container"  *ngIf="farm != null" class="wrapper">
-
+<div class="container" *ngIf="farm != null"  class="wrapper" >
 
   <ion-item class="square">
     <ion-grid>
@@ -16,11 +15,11 @@
     </ion-grid>
   </ion-item>
 
-  <ion-grid fixed="true" class="square">
+  <ion-grid  fixed="true" class="square">
     <ion-row>
     </ion-row>
     <ion-row>
-      <ion-col style="background-color: #B6E7B4;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTilesByFarm(farm.id)">
+      <ion-col id="mensajes" style="background-color: #B6E7B4;" sizeLg="3" sizeMd="3" sizeSm="3" sizeXs="4" *ngFor="let item of getTilesByFarm(farm.id)">
         <app-tile [tileInput]="item"></app-tile>
       </ion-col>
     </ion-row>
@@ -38,8 +37,17 @@
 </div>
 
 <!--Creación de nueva granja-->
-<div *ngIf="farm == null">
-<ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
-<ion-button *ngIf="newFarmName != ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+<div *ngIf="farm == null" class="wrapper">
+<ion-card >
+  <ion-card-header>
+    <ion-card-title>Bienvenido</ion-card-title>
+    <ion-card-subtitle>¡Comienza tu aventura!</ion-card-subtitle>
+  </ion-card-header>
 
+  <ion-card-content>
+      <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+      <ion-button [disabled]="newFarmName == ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+    </ion-card-content>
+  </ion-card>
 </div>
+  
