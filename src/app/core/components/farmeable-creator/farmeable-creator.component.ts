@@ -89,7 +89,7 @@ export class FarmeableCreatorComponent implements OnInit {
   async onFarmeableUsageAlert(task:any) {
     const alert = await this.alert.create({
       header: 'Error',
-      message: 'No es posible borrar la persona porque está asignada a una tarea',
+      message: 'No es posible borrar el farmeable porque está asignado a una casilla',
       buttons: [
         {
           text: 'Cerrar',
