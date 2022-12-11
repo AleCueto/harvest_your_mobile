@@ -25,6 +25,10 @@ export class FarmeablesService {
 
   ]
 
+    id:number = this._farmeable.length+1;
+    constructor() { 
+  
+    }
 
   getFarmeables:BehaviorSubject<Farmeable[]> = new BehaviorSubject(this._farmeable)
 
@@ -32,21 +36,50 @@ export class FarmeablesService {
 
 
   getFarmeableById(id:number){
-    var farmeableToReturn = this._farmeable.find(p=>p.id==id)
+    var farmeableToReturn = this._farmeable.find(p=>p.id==id);
     return farmeableToReturn;
 
   }
 
   addFarmeable(id_farmeable:number, amountGetted:number){
 
-    var farmeable = this.getFarmeableById(id_farmeable)
+    var farmeable = this.getFarmeableById(id_farmeable);
     if(farmeable != undefined)
-    farmeable.amount += amountGetted
+    farmeable.amount += amountGetted;
+
+  }
+
+  createFarmeable(farmeable:Farmeable){
+    farmeable.id = this.id++;
+    this._farmeable.push(farmeable);
+    this.getFarmeables.next(this._farmeable);
+  }
+
+
+  updateFarmeable(farmeable:Farmeable){
+
+    var _farmeable = this._farmeable.find(f => f.id == farmeable.id)
+
+    if(_farmeable){
+      _farmeable.name = farmeable.name;
+      _farmeable.amount = farmeable.amount;
+      _farmeable.seconds_to_harvest = farmeable.seconds_to_harvest;
+      _farmeable.purchase_value = farmeable.purchase_value;
+      _farmeable.sale_value = farmeable.sale_value;
+      _farmeable.image_beggining = farmeable.image_beggining;
+      farmeable.image_middle = farmeable.image_middle;
+      farmeable.image_end = farmeable.image_end;
+
+      this.getFarmeables.next(this._farmeable);
+    }
 
   }
 
 
-  constructor() { 
 
+  deleteFarmeableById(id:number){
+    this._farmeable = this._farmeable.filter(f=>f.id != id);
+    this.getFarmeables.next(this._farmeable);
   }
+
 }

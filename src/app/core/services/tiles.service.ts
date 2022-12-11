@@ -3,6 +3,7 @@ import * as moment from 'moment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Tile } from '../models/tile.model';
 import { Farm } from '../models/farm.model';
+import { Farmeable } from '../models/farmeable.model';
 
 
 @Injectable({
@@ -199,6 +200,11 @@ export class TilesService {
     
     return newEmptyTile
 
+  }
+
+
+  getTileByFarmeable(farmeable:Farmeable):Tile[]{
+    return this._tile.filter(a=>a.farmeable == farmeable);
   }
 
   constructor() {
