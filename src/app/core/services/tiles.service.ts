@@ -177,6 +177,12 @@ export class TilesService {
     this._tile.push(newEmptyTile)
   }
 
+  deleteTile(id:number){
+    this._tile.findIndex
+    this._tile = this._tile.filter(w=>w.id != id); 
+    this.tilesSubject.next(this._tile);
+  }
+
 
   public createTile(initialFarm:Farm):Tile{
 
@@ -206,6 +212,8 @@ export class TilesService {
   getTileByFarmeable(farmeable:Farmeable):Tile[]{
     return this._tile.filter(a=>a.farmeable == farmeable);
   }
+
+
 
   constructor() {
 

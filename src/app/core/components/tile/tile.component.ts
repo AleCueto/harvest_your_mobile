@@ -64,6 +64,10 @@ export class TileComponent implements OnInit {
     tile.canRecolect = false
   }
 
+  deleteTile(tile:Tile | undefined){
+    if(tile)
+    this.tileSVC.deleteTile(tile.id)
+  }
 
   setFarmeable(farmeable:Farmeable){
 
