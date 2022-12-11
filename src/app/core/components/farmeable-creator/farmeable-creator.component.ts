@@ -28,7 +28,7 @@ export class FarmeableCreatorComponent implements OnInit {
     return this.farmeableSVC.farmeables$;
   }
 
-  async presentPersonForm(farmeable: Farmeable) {
+  async presentFarmeableForm(farmeable: Farmeable | null) {
     const modal = await this.modal.create({
       component: FarmeableDetailedComponent,
       componentProps: {
@@ -52,7 +52,11 @@ export class FarmeableCreatorComponent implements OnInit {
   }
 
   onEditFarmeable(farmeable:Farmeable) {
-    this.presentPersonForm(farmeable);
+    this.presentFarmeableForm(farmeable);
+  }
+
+  onNewFarmeable(){
+    this.presentFarmeableForm(null);  
   }
 
   async onDeleteAlert(farmeable:Farmeable) {
