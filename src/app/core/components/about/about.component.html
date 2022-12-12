@@ -5,10 +5,10 @@
   <div class="container" class="wrapper">
     
     <h1 class="square">
-      About me:
+      {{"pages.about" | translate}}:
     </h1>
     <ion-img src="/assets/images/about/aboutPhoto.png" alt="Developer photo"></ion-img>
-    <p>Mi nombre es Alejandro Cueto Jiménez, desarrollador de aplicaciones y videojuegos.</p>
+    <p>{{"about.introduce" | translate}}</p>
     
     
     <ion-grid>
@@ -37,7 +37,7 @@
   
   <div class="container" class="wrapper">
     
-    <h1>Other jobs</h1>
+    <h1>{{"about.other_jobs" | translate}}</h1>
     
     <ion-slides pager="true" class="square">
       <ion-slide>
@@ -55,10 +55,5 @@
   </div>
   
 
-  <ion-footer [translucent]="true">
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
 
 </ion-content>

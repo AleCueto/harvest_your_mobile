@@ -53,7 +53,9 @@
         "about":"Sobre mi"
     },
     "About":{
-        "introduce":"Mi nombre es Alejandro Cueto Jiménez, desarrollador de aplicaciones y videojuegos"
+        "introduce":"Mi nombre es Alejandro Cueto Jiménez, desarrollador de aplicaciones y videojuegos",
+        "other_jobs":"Otros trabajos:"
+
     }
 
 
