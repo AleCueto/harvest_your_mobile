@@ -8,11 +8,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'farm' + ".title" , url: '/folder/Farm', icon: 'mail' },
-    { title: 'Store', url: '/folder/Store', icon: 'money' },
-    { title: 'Farms', url: '/folder/Farmlist', icon: 'heart' },
-    { title: 'Creator', url: '/folder/Creator', icon: 'add' },
-    { title: 'About', url: '/folder/About', icon: 'archive' },
+    { title: 'pages' + ".farm" , url: '/folder/Farm', icon: 'leaf' },
+    { title: 'pages' + ".store" , url: '/folder/Store', icon: 'storefront' },
+    { title: 'pages' + ".farms" , url: '/folder/Farmlist', icon: 'rose' },
+    { title: 'pages' + ".creator" , url: '/folder/Creator', icon: 'add' },
+    { title: 'pages' + ".about" , url: '/folder/About', icon: 'skull' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
@@ -26,5 +26,6 @@ export class AppComponent {
   changeLanguage(lng:string){
     this.translate.setDefaultLang(lng)
   }
+
 
 }

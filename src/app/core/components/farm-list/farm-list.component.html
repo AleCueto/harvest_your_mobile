@@ -1,6 +1,5 @@
 
-    <div>
-      
+    <div>      
       <ion-item disabled={{isEnabled(i)}} *ngFor="let i of getFarms()">
         <p (click)="setActiveFarm(i)">{{i.name}} </p>
         <ion-icon slot="end" name="create-outline" (click)="editFarm(i.id)" ></ion-icon>

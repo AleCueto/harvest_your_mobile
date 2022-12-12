@@ -1,14 +1,61 @@
 {
 
     "farm":{
-        "title":"Granja"
+        "welcome":"Bienvenido",
+        "start_your_adventure":"¡Comienza tu aventura!",
+        "set_name":"Pon un nombre a tu granja",
+        "create_farm":"Crea una nueva granja"
     },
 
     "store":{
-        "title":"Tienda"
+        "select_your_farmeable":"Elige tu farmeable",
+        "amount":"cantidad",
+        "pay":"comprar",
+        "buy_new_tile":"Compra una nueva casilla",
+        "price":"El precio de la casilla es: ",
+        "coins":" monedas",
+        "add_tile":"Añade casilla",
+        "buy_new_farm":"Compra una nueva granja",
+        "create_new_farm":"Crea una nueva granja"
     },
-    "generics":{
-        "money":"Dinero"
+    "farms":{
+        "farm_list":"Lista de granjas",
+        "form_title":"Formulario edición de granja"
+
+    },
+    "generic":{
+        "money":"Dinero",
+        "farmeables":"Farmeables",
+        "tiles":"Casillas",
+        "farms":"Granjas",
+        "name":"Nombre",
+        "edit":"Edita",
+        "delete":"Borrar",
+        "error":"Error",
+        "cancel":"Cancelar"
+    },
+    "creator":{
+        "not_posible":"No es posible borrar este farmeable porque se está usando en otra casilla.",
+        "data_farmeable":"Datos del farmeable",
+        "image_beginning":"Imagen del comienzo",
+        "image_middle":"Imagen intermedia",
+        "image_end":"Imagen del final",
+        "purchase_value":"Valor de compra",
+        "sale_value":"Valor de venta",
+        "seconds_to_harvest":"Segundos para recoger"
+    },
+    "pages":{
+        "title":"Menu",
+        "farm":"Granja",
+        "store":"Tienda",
+        "farms":"Granjas",
+        "creator":"Creador",
+        "about":"Sobre mi"
+    },
+    "About":{
+        "introduce":"Mi nombre es Alejandro Cueto Jiménez, desarrollador de aplicaciones y videojuegos"
     }
+
+
 
 }

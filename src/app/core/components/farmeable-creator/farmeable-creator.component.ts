@@ -86,7 +86,7 @@ export class FarmeableCreatorComponent implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onFarmeableUsageAlert(task:any) {
+  async onFarmeableUsageAlert(e:any) {
     const alert = await this.alert.create({
       header: 'Error',
       message: 'No es posible borrar el farmeable porque está asignado a una casilla',

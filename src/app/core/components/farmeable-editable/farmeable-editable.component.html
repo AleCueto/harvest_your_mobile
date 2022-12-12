@@ -1,31 +1,31 @@
 <ion-item>
-  <ion-avatar>
-      <img *ngIf="!farmeable?.image_end" alt="Silhouette of a farmeable's head"
-          src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      <img *ngIf="farmeable?.image_end" alt="farmeable.image_end" [src]="farmeable?.image_end" />
-  </ion-avatar>
-  <ion-label>{{farmeable?.purchase_value}} {{farmeable?.name}}</ion-label>
-  <ion-button class="item-expanded" slot="end" fill="clear" (click)="onEditClick()">
-      <div class="vertical">
-          <ion-icon name="create"></ion-icon>
-          {{'Editar' | uppercase}}
-      </div>
-  </ion-button>
-  <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
-      <div class="vertical">
-          <ion-icon name="trash"></ion-icon>
-          {{'Borrar' | uppercase}}
-      </div>
-  </ion-button>
+    <ion-avatar>
+        <img *ngIf="!farmeable?.image_end" alt="Silhouette of a farmeable's head"
+            src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        <img *ngIf="farmeable?.image_end" alt="farmeable.image_end" [src]="farmeable?.image_end" />
+    </ion-avatar>
+    <ion-label>{{ farmeable?.purchase_value }} {{ farmeable?.name }}</ion-label>
+    <ion-button class="item-expanded" slot="end" fill="clear" (click)="onEditClick()">
+        <div class="vertical">
+            <ion-icon name="create"></ion-icon>
+            {{ "generic.edit" | translate  | uppercase }}
+        </div>
+    </ion-button>
+    <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
+        <div class="vertical">
+            <ion-icon name="trash"></ion-icon>
+            {{ "generic.delete" | translate | uppercase }}
+        </div>
+    </ion-button>
 </ion-item>
 
 <ion-item-options>
-  <ion-item-option >
-      <ion-icon slot="top" name="create"></ion-icon>
-      {{'Editar' | uppercase}}
-  </ion-item-option>
-  <ion-item-option color="danger">
-      <ion-icon slot="top" name="trash"></ion-icon>
-      {{'Borrar' | uppercase}}
-  </ion-item-option>
+    <ion-item-option>
+        <ion-icon slot="top" name="create"></ion-icon>
+        {{ "Editar" | uppercase }}
+    </ion-item-option>
+    <ion-item-option color="danger">
+        <ion-icon slot="top" name="trash"></ion-icon>
+        {{ "Borrar" | uppercase }}
+    </ion-item-option>
 </ion-item-options>

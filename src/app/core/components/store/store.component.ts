@@ -34,6 +34,7 @@ export class StoreComponent implements OnInit {
   farmPrice:number = 300;
   tilesToBuy:number = 0;
 
+
   cart:Array<CheckoutFarmeable> = []
 
   
@@ -93,6 +94,8 @@ addToChart(value: CheckoutFarmeable){
 }
 
 
+
+
   onSubmit(){
     this.payFarmeables(this.form_farmeable.value);
   }
@@ -120,6 +123,8 @@ addToChart(value: CheckoutFarmeable){
   getMoney(){
     return this.moneySVC.money$;
   }
+
+
 
   createTiles(cantity:number){
 

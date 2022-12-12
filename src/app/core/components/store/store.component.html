@@ -6,13 +6,13 @@
 
     <ion-segment value="farmeables">
       <ion-segment-button value="farmeables" (click)="selectItem('farmeables')">
-        <ion-label>Farmeables</ion-label>
+        <ion-label>{{"generic.farmeables" | translate}}</ion-label>
       </ion-segment-button>
       <ion-segment-button value="tiles" (click)="selectItem('tiles')">
-        <ion-label>Tiles</ion-label>
+        <ion-label>{{"generic.tiles" | translate}}</ion-label>
       </ion-segment-button>
       <ion-segment-button value="farms" (click)="selectItem('farms')">
-        <ion-label>Farms</ion-label>
+        <ion-label>{{"generic.farms" | translate}}</ion-label>
       </ion-segment-button>
     </ion-segment>
     
@@ -22,10 +22,10 @@
       <form [formGroup]="form_farmeable"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="square">
         <app-farmeable-selectable formControlName="farmeable"></app-farmeable-selectable>
         <ion-item>
-          <ion-label>Cantidad:</ion-label>
+          <ion-label>{{"store.amount" | translate}}</ion-label>
           <ion-input type="number" min="0" placeholder="0" formControlName="amount"></ion-input>
         </ion-item>
-        <ion-button class="square" style="margin: 15px;"  [disabled]="!form_farmeable.valid" type="submit" >Pay</ion-button>
+        <ion-button class="square" style="margin: 15px;"  [disabled]="!form_farmeable.valid" type="submit" >{{"store.pay" | translate}}</ion-button>
       </form>
     </div>
 
@@ -34,14 +34,15 @@
 
       <div class="square">
         <ion-item>
-          ¡Compra una nueva granja!
+          {{"store.buy_new_farm" | translate}}
+
         </ion-item>
         <ion-item>
           <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
         </ion-item>
       </div>
       
-      <ion-button class="square" [disabled]="newFarmName == ''" (click)="createFarm()">Crea una nueva granja</ion-button>
+      <ion-button class="square" [disabled]="newFarmName == ''" (click)="createFarm()">{{"store.create_new_farm"|translate}}</ion-button>
 
     </div>
 
@@ -56,16 +57,16 @@
 
       <div class="square">
         <ion-item>
-          ¡Compra una nueva granja!
+          {{"store.buy_new_tile" | translate}}
         </ion-item>
         <ion-item>
           <!-- <ion-label>Cantidad:</ion-label> -->
           <!-- <ion-input type="number" min="0" placeholder="0" formControlName="amount" [(ngModel)]="tilesToBuy"></ion-input> -->
-          El precio de la casilla es: {{tilePrice}} monedas
+          {{"store.price" | translate}} {{tilePrice}} {{"store.coins" | translate}}
         </ion-item>
       </div>
       <!--CONTINUAR  TIene que ser un formulario-->
-      <ion-button [disabled]="tilesToBuy > 0" (click)="createTiles(tilesToBuy)">Add Tile</ion-button>
+      <ion-button (click)="createTiles(tilesToBuy)">Add Tile</ion-button>
     </div>
 
     <div class="wrapper">

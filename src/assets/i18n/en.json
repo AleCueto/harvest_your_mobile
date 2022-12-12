@@ -1,14 +1,58 @@
 {
 
     "farm":{
-        "title":"Farm"
+        "welcome":"Welcome",
+        "start_your_adventure":"Start your adventure!",
+        "set_name":"Set a name to your farm",
+        "create_farm":"Create a new farm"
     },
 
     "store":{
-        "title":"Store"
+        "select_your_farmeable":"Select your farmeable",
+        "amount":"amount",
+        "pay":"buy",
+        "buy_new_tile":"Buy a new tile",
+        "price":"The price of the tile is: ",
+        "coins":"coins",
+        "add_tile":"Add tile",
+        "buy_new_farm":"Buy a new farm",
+        "create_new_farm":"Create a new farm"
+    },
+    "farms":{
+        "farm_list":"Farm list",
+        "form_title":"Farms editting form"
     },
     "generic":{
-        "money":"Money"
+        "money":"Money",
+        "farmeables":"Farmeables",
+        "tiles":"Tiles",
+        "farms":"Farms",
+        "name":"Name",
+        "edit":"Edit",
+        "delete":"Delete",
+        "error":"Error",
+        "cancel":"Cancel"
+    },
+    "creator":{
+        "not_posible":"Is not possible delete this farmeable because its used in some tile.",
+        "data_farmeable":"Farmeable data",
+        "image_beginning":"Image beginning",
+        "image_middle":"Image middle",
+        "image_end":"Image end",
+        "purchase_value":"Purchase value",
+        "sale_value":"Sale value",
+        "seconds_to_harvest":"Seconds to harvest"
+    },
+    "pages":{
+        "title":"Menu",
+        "farm":"Farm",
+        "store":"Store",
+        "farms":"Farms",
+        "creator":"Creator",
+        "about":"About me"
+    },
+    "About":{
+        "introduce":"My name is Alejandro Cueto Jiménez, im application and videogames developer"
     }
 
 

@@ -1,7 +1,16 @@
-<form *ngIf="form_edit" [formGroup]="form_edit"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="square">
-  <ion-item>
-    <ion-label>Nombre:</ion-label>
-    <ion-input type="text"  formControlName="farmName"></ion-input>
-  </ion-item>
-  <ion-button [disabled]="!form_edit.valid" type="submit" >Edit</ion-button>
-</form>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{"farms.form_title" | translate}}</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form *ngIf="form_edit" [formGroup]="form_edit"  (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label>{{"generic.name" | translate}}:</ion-label>
+      <ion-input type="text"  formControlName="farmName"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form_edit.valid" type="submit" >Edit</ion-button>
+  </form>
+</ion-content>
