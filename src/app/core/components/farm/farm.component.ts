@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Console } from 'console';
 import { Subscription } from 'rxjs';
 import { CoreModule } from '../../core.module';
 import { Farm } from '../../models/farm.model';

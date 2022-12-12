@@ -17,8 +17,9 @@ import { FarmeableCreatorComponent } from './components/farmeable-creator/farmea
 import { FarmeableEditableComponent } from './components/farmeable-editable/farmeable-editable.component';
 import { FarmeableDetailedComponent } from './components/farmeable-detailed/farmeable-detailed.component';
 
+
 @NgModule({
-  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent],
+  declarations: [TileComponent, FarmComponent, TileDetailComponent, StoreComponent, FarmeableSelectableComponent, FarmListComponent, AboutComponent, FarmDetailedComponent, FarmeableCreatorComponent, FarmeableEditableComponent, FarmeableDetailedComponent,],
   imports: [
     CommonModule,
     IonicModule,

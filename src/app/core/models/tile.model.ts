@@ -1,6 +1,5 @@
 import { Farmeable } from "./farmeable.model";
 import * as moment from 'moment';
-import { Farm } from "./farm.model";
 
 
 export interface Tile{
