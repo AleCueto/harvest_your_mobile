@@ -50,6 +50,12 @@ export class FarmeablesService {
   }
 
   createFarmeable(farmeable:Farmeable){
+    //IMAGE WHILE WE DONT HAVE IMAGES
+    farmeable.image_beggining = "https://picsum.photos/200"
+    farmeable.image_middle = "https://picsum.photos/200"
+    farmeable.image_end = "https://picsum.photos/200"
+
+
     farmeable.id = this.id++;
     this._farmeable.push(farmeable);
     this.getFarmeables.next(this._farmeable);

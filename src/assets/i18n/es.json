@@ -50,10 +50,14 @@
         "store":"Tienda",
         "farms":"Granjas",
         "creator":"Creador",
-        "about":"Sobre mi"
+        "about":"Sobre mi",
+        "farmlist":"Granjas"
+
     },
-    "About":{
+    "about":{
         "introduce":"Mi nombre es Alejandro Cueto Jiménez, desarrollador de aplicaciones y videojuegos",
+        "studies":"I study 2º DAM at CPIFP (Málaga Tech Park)",
+        "module":"This is an activity for the module Data Access and free configuration hour",
         "other_jobs":"Otros trabajos:"
 
     }

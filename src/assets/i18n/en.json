@@ -49,10 +49,13 @@
         "store":"Store",
         "farms":"Farms",
         "creator":"Creator",
-        "about":"About me"
+        "about":"About me",
+        "farmlist":"Farms"
     },
-    "About":{
+    "about":{
         "introduce":"My name is Alejandro Cueto Jiménez, im application and videogames developer",
+        "studies":"Estudio 2º DAM en el CPIFP (Málaga Tech Park)",
+        "module":"Y esta actividad es para el módulo de Acceso a Datos y Hora de Libre configuración"
         "other_jobs":"Other jobs:"
     }
 
