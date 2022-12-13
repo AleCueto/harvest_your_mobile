@@ -4,7 +4,7 @@
             src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         <img *ngIf="farmeable?.image_end" alt="farmeable.image_end" [src]="farmeable?.image_end" />
     </ion-avatar>
-    <ion-label>{{ farmeable?.purchase_value }} {{ farmeable?.name }}</ion-label>
+    <ion-label>{{ farmeable?.name }}: {{ farmeable?.purchase_value }} {{"store.coins"|translate}}</ion-label>
     <ion-button class="item-expanded" slot="end" fill="clear" (click)="onEditClick()">
         <div class="vertical">
             <ion-icon name="create"></ion-icon>
@@ -21,11 +21,12 @@
 
 <ion-item-options>
     <ion-item-option>
-        <ion-icon slot="top" name="create"></ion-icon>
+        <ion-icon slot="top" name="create-outline"></ion-icon>
         {{ "Editar" | uppercase }}
     </ion-item-option>
     <ion-item-option color="danger">
-        <ion-icon slot="top" name="trash"></ion-icon>
+        <ion-icon slot="top" name="trash-outline"></ion-icon>
         {{ "Borrar" | uppercase }}
     </ion-item-option>
+
 </ion-item-options>

@@ -15,7 +15,11 @@ interface CheckoutFarmeable {
   amount:number 
 }
 
+interface TileBuyObject{
 
+  amount:number;
+
+}
 
 @Component({
   selector: 'app-store',
@@ -34,16 +38,25 @@ export class StoreComponent implements OnInit {
   farmPrice:number = 300;
   tilesToBuy:number = 0;
 
+  form_tile:FormGroup;
+
+
 
   cart:Array<CheckoutFarmeable> = []
 
   
-  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService, private tileSCV:TilesService, private farmSVC:FarmService, ) { 
+  constructor(private moneySVC:MoneyService, private fb:FormBuilder, private modal:ModalController, private farmeableSVC:FarmeablesService, private tileSCV:TilesService, private farmSVC:FarmService, private fbTile:FormBuilder ) { 
 
       this.form_farmeable = this.fb.group({
         farmeable:['', [Validators.required]],
         amount:['', [Validators.required]],
     });
+
+      this.form_tile = this.fbTile.group({
+        amount:['', [Validators.required]],
+    });
+
+
   }
   
 
@@ -98,8 +111,13 @@ addToChart(value: CheckoutFarmeable){
 
   onSubmit(){
     this.payFarmeables(this.form_farmeable.value);
+    
   }
 
+  onSubmitTile(){
+    this.createTiles(this.form_tile.value);
+
+  }
 
 
   selectItem(storenName:string){
@@ -126,12 +144,16 @@ addToChart(value: CheckoutFarmeable){
 
 
 
-  createTiles(cantity:number){
+  createTiles(cantity:TileBuyObject){
+
+    var newTilePrice = cantity.amount * this.tilePrice;
 
 
-    if(this.moneySVC.getMoney.value >= this.tilePrice && this.farmSVC.selectedFarm?.id){
+    if(this.moneySVC.getMoney.value >= newTilePrice && this.farmSVC.selectedFarm?.id){
+      for(let i = 0; i < cantity.amount; i++){
         this.moneySVC.payMoney(this.tilePrice)
         this.tileSCV.addTile(this.farmSVC.selectedFarm?.id)
+      }
     } else{
       
     }
