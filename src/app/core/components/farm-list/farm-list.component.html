@@ -2,7 +2,23 @@
     <div>      
       <ion-item disabled={{isEnabled(i)}} *ngFor="let i of getFarms()">
         <p (click)="setActiveFarm(i)">{{i.name}} </p>
-        <ion-icon slot="end" name="create-outline" (click)="editFarm(i.id)" ></ion-icon>
-        <ion-icon slot="end" name="trash-outline" (click)="deleteFarm(i.id)"></ion-icon>
+        
+        <ion-button class="item-expanded" slot="end" fill="clear" (click)="editFarm(i.id)">
+          <div class="vertical">
+              <ion-icon name="create"></ion-icon>
+              {{ "generic.edit" | translate  | uppercase }}
+          </div>
+        </ion-button>
+
+
+        <ion-button class="item-expanded" slot="end" fill="clear" color="danger" (click)="deleteFarm(i.id)">
+          <div class="vertical">
+              <ion-icon name="trash"></ion-icon>
+              {{ "generic.delete" | translate | uppercase }}
+          </div>
+        </ion-button>
+
+        <!-- <ion-icon  color="primary" slot="end" name="create-outline" (click)="editFarm(i.id)" ></ion-icon> -->
+        <!-- <ion-icon color="danger" slot="end" name="trash-outline" (click)="deleteFarm(i.id)"></ion-icon> -->
       </ion-item>
     </div>

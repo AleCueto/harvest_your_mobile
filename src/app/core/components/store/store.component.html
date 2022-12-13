@@ -34,7 +34,7 @@
 
       <div class="square">
         <ion-item>
-          {{"store.buy_new_farm" | translate}}
+          {{"store.buy_new_farm" | translate}} {{farmPrice}}
 
         </ion-item>
         <ion-item>
@@ -56,7 +56,7 @@
       <!-- <ion-input type="number" placeholder="Escribe el nombre de tu granja" [(ngModel)]="tilesToBuy"></ion-input> -->
 
       <div class="square">
-        <form [formGroup]="form_tile"  (ngSubmit)="onSubmitTile()" (keyup.enter)="onSubmitTile()" class="square">
+        <form [formGroup]="form_tile"  (ngSubmit)="onSubmitTile()" (keyup.enter)="onSubmitTile()">
           <ion-item>
             {{"store.buy_new_tile" | translate}} {{"store.price" | translate}} {{tilePrice}} {{"store.coins" | translate}}
           </ion-item>

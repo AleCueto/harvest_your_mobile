@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{"creator.data_farmeable"}}</ion-title>
+    <ion-title>{{"creator.data_farmeable" | translate}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss(null)">{{"generic.cancel"}}</ion-button>
+      <ion-button (click)="onDismiss(null)">{{"generic.cancel" | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -63,7 +63,7 @@
   <ion-grid>
     <ion-row>
       <ion-col class="ion-text-center">
-        <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+        <ion-button [disabled]="!form.valid" (click)="onSubmit()">{{(mode=="Edit"?"generic.modify":"generic.add") | translate}}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

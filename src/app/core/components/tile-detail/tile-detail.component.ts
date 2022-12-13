@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
-import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { lastValueFrom, Observable } from 'rxjs';
 import { Farmeable } from '../../models/farmeable.model';
 import { FarmeablesService } from '../../services/farmeables.service';
 
@@ -16,7 +17,8 @@ export class TileDetailComponent implements OnInit {
 
   constructor(private farmeableSVC:FarmeablesService,
     private modal:ModalController, 
-    private alertController: AlertController) { }
+    private alertController: AlertController,
+    private translate:TranslateService) { }
 
   
 
@@ -40,10 +42,10 @@ export class TileDetailComponent implements OnInit {
 
   async presentAlert(farm:Farmeable) {
     const alert = await this.alertController.create({
-      header: '¡No puedes!',
-      subHeader: 'No te quedan más ' + farm.name + "/s",
-      message: 'Deberías ir a la tienda y comprar más.',
-      buttons: ['OK'],
+      header: await lastValueFrom(this.translate.get('generic.warning')),
+      subHeader: await lastValueFrom(this.translate.get('farm.theres_no_more')) + farm.name + await lastValueFrom(this.translate.get('farm./s')),
+      message: await lastValueFrom(this.translate.get('farm.deberias')),
+      buttons: [await lastValueFrom(this.translate.get('generic.ok'))],
     });
 
     await alert.present();

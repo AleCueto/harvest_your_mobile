@@ -4,7 +4,11 @@
         "welcome":"Bienvenido",
         "start_your_adventure":"¡Comienza tu aventura!",
         "set_name":"Pon un nombre a tu granja",
-        "create_farm":"Crea una nueva granja"
+        "create_farm":"Crea una nueva granja",
+        "theres_no_more":"No hay más ",
+        "/s":"/s",
+        "deberias":"Deberías ir a la tienda y comprar más"
+
     },
 
     "store":{
@@ -24,15 +28,19 @@
 
     },
     "generic":{
+        "ok":"vale",
         "money":"Dinero",
         "farmeables":"Farmeables",
         "tiles":"Casillas",
         "farms":"Granjas",
         "name":"Nombre",
-        "edit":"Edita",
+        "edit":"Editar",
         "delete":"Borrar",
         "error":"Error",
-        "cancel":"Cancelar"
+        "cancel":"Cancelar",
+        "warning":"¡No puedes!",
+        "modify":"Modificar",
+        "add":"Añadir"
     },
     "creator":{
         "not_posible":"No es posible borrar este farmeable porque se está usando en otra casilla.",

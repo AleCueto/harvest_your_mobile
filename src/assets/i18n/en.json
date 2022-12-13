@@ -4,7 +4,11 @@
         "welcome":"Welcome",
         "start_your_adventure":"Start your adventure!",
         "set_name":"Set a name to your farm",
-        "create_farm":"Create a new farm"
+        "create_farm":"Create a new farm",
+        "theres_no_more":"Theres no more ",
+        "/s":"/s",
+        "deberias":"You should go to store and buy more"
+
     },
 
     "store":{
@@ -12,10 +16,10 @@
         "amount":"amount",
         "pay":"buy",
         "buy_new_tile":"Buy a new tile",
-        "price":"The price of the tile is: ",
+        "price":": ",
         "coins":"coins",
         "add_tile":"Add tile",
-        "buy_new_farm":"Buy a new farm",
+        "buy_new_farm":"Buy a new farm: ",
         "create_new_farm":"Create a new farm"
     },
     "farms":{
@@ -23,6 +27,7 @@
         "form_title":"Farms editting form"
     },
     "generic":{
+        "ok":"ok",
         "money":"Money",
         "farmeables":"Farmeables",
         "tiles":"Tiles",
@@ -31,7 +36,10 @@
         "edit":"Edit",
         "delete":"Delete",
         "error":"Error",
-        "cancel":"Cancel"
+        "cancel":"Cancel",
+        "warning":"Your cant!",
+        "modify":"Modify",
+        "add":"Add"
     },
     "creator":{
         "not_posible":"Is not possible delete this farmeable because its used in some tile.",
@@ -55,7 +63,7 @@
     "about":{
         "introduce":"My name is Alejandro Cueto Jiménez, im application and videogames developer",
         "studies":"Estudio 2º DAM en el CPIFP (Málaga Tech Park)",
-        "module":"Y esta actividad es para el módulo de Acceso a Datos y Hora de Libre configuración"
+        "module":"Y esta actividad es para el módulo de Acceso a Datos y Hora de Libre configuración",
         "other_jobs":"Other jobs:"
     }
 
