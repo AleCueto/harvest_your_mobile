@@ -43,5 +43,12 @@
 | diseño responsivo  | mi aplicacion se adapta a cualquier tipo de resolucion, aunque la estructura y el diseño no cambia para cada uno de ellos  |
 | uniformidad  | la app mantiene todo el tiempo una uniformidad que facilita el entendimiento y el uso de la misma.  |
  
+ 
+ ## Capturas de la app
+ 
+ ![granja](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-granja.PNG)
+ ![farmeable](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-farmeables.PNG)
+ ![tienda]([https://github.com/AleCueto/imagenes/blob/master/favicon2.png](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-tienda1.PNG))
+
 
 [![Alt text](https://img.youtube.com/vi/DSB2tnbzK5A/0.jpg)](https://www.youtube.com/watch?v=DSB2tnbzK5A)
