@@ -45,7 +45,7 @@
   </ion-card-header>
 
   <ion-card-content>
-      <ion-input placeholder="Escribe el nombre de tu granja" [(ngModel)]="newFarmName"></ion-input>
+      <ion-input placeholder="{{'store.choose_name'|translate}}" [(ngModel)]="newFarmName"></ion-input>
       <ion-button [disabled]="newFarmName == ''" (click)="createFarm()">{{"farm.create_farm"|translate}}</ion-button>
     </ion-card-content>
   </ion-card>

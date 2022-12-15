@@ -20,7 +20,8 @@
         "coins":"coins",
         "add_tile":"Add tile",
         "buy_new_farm":"Buy a new farm: ",
-        "create_new_farm":"Create a new farm"
+        "create_new_farm":"Create a new farm",
+        "choose_name":"Choose a name for your farm"
     },
     "farms":{
         "farm_list":"Farm list",

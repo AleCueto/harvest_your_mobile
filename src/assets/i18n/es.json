@@ -20,7 +20,8 @@
         "coins":" monedas",
         "add_tile":"Añade casilla",
         "buy_new_farm":"Compra una nueva granja",
-        "create_new_farm":"Crea una nueva granja"
+        "create_new_farm":"Crea una nueva granja",
+        "choose_name":"Elige un nombre para tu granja"
     },
     "farms":{
         "farm_list":"Lista de granjas",

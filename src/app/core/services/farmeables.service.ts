@@ -24,10 +24,10 @@ export class FarmeablesService {
     {
       id:2,
       name:"orange",
-      seconds_to_harvest:6,
-      purchase_value:50,
-      sale_value:100,
-      amount:3,
+      seconds_to_harvest:3,
+      purchase_value:10,
+      sale_value:50,
+      amount:20,
       image_beggining:"/assets/images/farmeables/orange/orange-beginning.png",
       image_middle:"/assets/images/farmeables/orange/orange-middle.png",
       image_end:"/assets/images/farmeables/orange/orange-complete.png"
