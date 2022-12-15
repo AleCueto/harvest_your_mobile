@@ -48,7 +48,7 @@
  
  ![granja](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-granja.PNG)
  ![farmeable](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-farmeables.PNG)
- ![tienda]([https://github.com/AleCueto/imagenes/blob/master/favicon2.png](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-tienda1.PNG))
+ ![tienda](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-tienda1.PNG)
 
 
 [![Alt text](https://img.youtube.com/vi/DSB2tnbzK5A/0.jpg)](https://www.youtube.com/watch?v=DSB2tnbzK5A)
