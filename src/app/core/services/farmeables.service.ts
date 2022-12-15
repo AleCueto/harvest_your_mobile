@@ -21,7 +21,17 @@ export class FarmeablesService {
       image_middle:"/assets/images/farmeables/onion/onion-middle.png",
       image_end:"/assets/images/farmeables/onion/onion-complete.png"
     },
-
+    {
+      id:2,
+      name:"orange",
+      seconds_to_harvest:6,
+      purchase_value:50,
+      sale_value:100,
+      amount:3,
+      image_beggining:"/assets/images/farmeables/orange/orange-beginning.png",
+      image_middle:"/assets/images/farmeables/orange/orange-middle.png",
+      image_end:"/assets/images/farmeables/orange/orange-complete.png"
+    },
 
   ]
 
