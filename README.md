@@ -1,5 +1,6 @@
 ﻿# Harvest Your Mobile
  [image](https://github.com/AleCueto/harvest_your_mobile/blob/master/src/assets/icon/favicon2.png)
+ ![paginaprincipalinvitado](https://github.com/albertomorenogonzalez/diario-del-cazador-HK/blob/main/capturas/paginaprincipalinvitado.png)
  
  ## Uso y secciones:
  En esta aplicación tienes unas granjas en las que puedes plantar y cosechar farmeables lo que te dará dinero, ¡que podrás gastar en más semillas, macetas o casillas y granjas!
