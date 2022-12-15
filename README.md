@@ -14,7 +14,7 @@
  
  Sobre mí: En dicha página hay información sobre el desarrollador de la aplicación.
  
-![image](https://postimg.cc/KkPH051t][img]https://i.postimg.cc/KkPH051t/captura-granja2.png)
+
  
  
   ## Repaso por rúbrica:
