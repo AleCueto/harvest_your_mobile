@@ -53,7 +53,7 @@ import { FarmeableDetailedComponent } from './components/farmeable-detailed/farm
     FarmDetailedComponent,
     FarmeableCreatorComponent,
     FarmeableEditableComponent,
-    FarmeableDetailedComponent
+    FarmeableDetailedComponent,
     
     ]
 })
