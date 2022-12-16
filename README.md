@@ -52,5 +52,8 @@
  ![granjas](https://github.com/AleCueto/imagenes/blob/master/screenshots/captura-granjas.PNG)
  ![sobremi](https://github.com/AleCueto/imagenes/blob/master/screenshots/aboutme.PNG)
 
+
+Algunas imagenes sacadas de freepic: https://www.freepik.es/vector-gratis/conjunto-iconos-aislados-frutas-verduras_5754001.htm#query=iconos%20frutas%20y%20verduras&position=14&from_view=keyword
+
 ## Video de presentación:
 [![Alt text](https://img.youtube.com/vi/DSB2tnbzK5A/0.jpg)](https://www.youtube.com/watch?v=DSB2tnbzK5A)
